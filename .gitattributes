@@ -1,0 +1,19 @@
+# Normalize every text file to LF in the repository and in every checkout,
+# regardless of the contributor's core.autocrlf setting.
+* text=auto eol=lf
+
+# Frozen public artifacts. Their bytes are hashed in demo-v0-freeze.json, so
+# they must be byte-identical on Windows, macOS, Linux, and on Vercel.
+public/demo/*.json text eol=lf
+
+# Binary assets
+*.ico binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.otf binary

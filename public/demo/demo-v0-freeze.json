@@ -1,0 +1,30 @@
+{
+  "demo_implementation_commit": "3f8229244954a3308f6d23ebf8c317aa779230f6",
+  "demo_json_sha256": "03d9fedaa8cc78ebe579088169707d8ab8a9cafc68c1668d0344c17db76fd1b0",
+  "environment_digest": "a545943ef03516d9e3cded8de79d94b8053305ead8d58129959bf8b85b6eef63",
+  "environment_id": "webhook",
+  "environment_version": "1.0.0",
+  "generated_at": "2026-09-28T12:11:59.185899+00:00",
+  "kind": "demo-v0-freeze-manifest",
+  "note": "Metadata about one exported demo run. Not an evaluation verdict.",
+  "run_id": "879c077fcda2ee530deb9d7f7ad290a3",
+  "scenario_id": "coding-ai-evaluation-webhook",
+  "solvers": [
+    {
+      "canonical_capability_verdict": "SOLVED",
+      "canonical_outcome": "PASS",
+      "profile_id": "replay-known-good",
+      "solver_id": "ref-overlay-replay:known-good",
+      "solver_label": "Reference Repair"
+    },
+    {
+      "canonical_capability_verdict": "NOT_SOLVED",
+      "canonical_outcome": "FAIL",
+      "profile_id": "noop",
+      "solver_id": "ref-noop",
+      "solver_label": "No Repair"
+    }
+  ],
+  "task_fingerprint": "13dbadc6af39170b067b55adabded22c0ffe58d6417a3830f78a15888479c614",
+  "task_id": "IF-WEBHOOK-00001"
+}

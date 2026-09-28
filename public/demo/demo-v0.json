@@ -1,0 +1,89 @@
+{
+  "attempts": [
+    {
+      "canonical_capability_verdict": "SOLVED",
+      "canonical_outcome": "PASS",
+      "human_summary": "Repair accepted",
+      "patch_sha256": "94b5e86dcc4c36e0ae0cbfa47e26c1e790998f3665fc82363d1c8994a715ca99",
+      "profile_id": "replay-known-good",
+      "solver_id": "ref-overlay-replay:known-good",
+      "solver_label": "Reference Repair",
+      "verification_phase": "OK"
+    },
+    {
+      "canonical_capability_verdict": "NOT_SOLVED",
+      "canonical_outcome": "FAIL",
+      "human_summary": "Repair rejected",
+      "patch_sha256": "",
+      "profile_id": "noop",
+      "solver_id": "ref-noop",
+      "solver_label": "No Repair",
+      "verification_phase": "FAILED"
+    }
+  ],
+  "created_at": "2026-09-28T12:11:07.243873+00:00",
+  "evidence_refs": [
+    {
+      "kind": "task_fingerprint",
+      "sha256": "13dbadc6af39170b067b55adabded22c0ffe58d6417a3830f78a15888479c614"
+    },
+    {
+      "kind": "environment_execution_digest",
+      "sha256": "a545943ef03516d9e3cded8de79d94b8053305ead8d58129959bf8b85b6eef63"
+    },
+    {
+      "attempt_id": "51a857ff083a",
+      "kind": "attempt",
+      "profile_id": "replay-known-good",
+      "solver_id": "ref-overlay-replay:known-good"
+    },
+    {
+      "kind": "patch_sha256",
+      "sha256": "94b5e86dcc4c36e0ae0cbfa47e26c1e790998f3665fc82363d1c8994a715ca99"
+    },
+    {
+      "attempt_id": "d31aa52ff859",
+      "kind": "attempt",
+      "profile_id": "noop",
+      "solver_id": "ref-noop"
+    }
+  ],
+  "narrative": [
+    "This is representative of coding/evaluation work performed in the AI-training market.",
+    "FaultFoundry bound that requirement to a reproducible software task.",
+    "Two repair attempts were evaluated under the same task/environment.",
+    "FaultFoundry's existing evaluation system determined the canonical outcomes.",
+    "The resulting evidence was packaged for human review."
+  ],
+  "run_id": "879c077fcda2ee530deb9d7f7ad290a3",
+  "scenario": {
+    "expected_deliverables": [
+      "reproducible_problem",
+      "controlled_environment",
+      "verified_solution_attempt",
+      "discriminative_verification",
+      "evidence_package"
+    ],
+    "market_category": "coding_ai_evaluation",
+    "scenario_id": "coding-ai-evaluation-webhook",
+    "short_description": "A reproducible software repair, evaluated under one controlled environment, with the outcome taken from the existing verifier."
+  },
+  "schema": "demo-v0",
+  "task": {
+    "environment_digest": "a545943ef03516d9e3cded8de79d94b8053305ead8d58129959bf8b85b6eef63",
+    "environment_id": "webhook",
+    "environment_version": "1.0.0",
+    "fingerprint": "13dbadc6af39170b067b55adabded22c0ffe58d6417a3830f78a15888479c614",
+    "public_summary": {
+      "environment_id": "webhook",
+      "problem_statement": "Multiple deliveries of the same provider event must produce at most one invoice per event. Retries may arrive sequentially or overlap concurrently. Keep the public API unchanged.",
+      "starting_state": "Webhook processor accepting payment event deliveries from a provider that may retry them.",
+      "task_id": "IF-WEBHOOK-00001",
+      "title": "Webhook idempotency: duplicate deliveries must not duplicate invoices",
+      "visible_tests": [
+        "test/visible.js"
+      ]
+    },
+    "task_id": "IF-WEBHOOK-00001"
+  }
+}

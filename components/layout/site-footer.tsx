@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import { Container } from "@/components/ui/container";
-import { ArrowUpRightIcon, BrandMark } from "@/components/ui/icons";
+import { BrandMark } from "@/components/ui/icons";
 import { demo } from "@/lib/demo";
 import { footers, site } from "@/lib/site";
 
@@ -23,16 +23,11 @@ export function SiteFooter({ variant }: { variant: keyof typeof footers }) {
         <nav aria-label="Footer">
           <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
             {links.map((link) => {
-              const className = "inline-flex items-center gap-1 rounded-xs text-muted transition-colors hover:text-ink";
+              const className = "rounded-xs text-muted transition-colors hover:text-ink";
               const isPage = link.href.startsWith("/") && !link.href.startsWith("/demo/");
               return (
                 <li key={link.href}>
-                  {link.external ? (
-                    <a href={link.href} className={className} rel="noopener noreferrer" target="_blank">
-                      {link.label}
-                      <ArrowUpRightIcon size={12} />
-                    </a>
-                  ) : isPage ? (
+                  {isPage ? (
                     <Link href={link.href} className={className}>
                       {link.label}
                     </Link>

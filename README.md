@@ -147,10 +147,10 @@ are prerendered, a changed value takes effect on the next build/deploy.
 - `NEXT_PUBLIC_CONTACT_URL` — destination of the "start a conversation"
   call to action on `/partner`. Accepted values: an `https://` or `http://`
   URL (scheduling page, form) or a `mailto:` address. The value is validated
-  at build time and an invalid value fails the build. When it is unset the
-  button is labelled "Reach out via GitHub" and points at the public
-  repository, so the page never ships a broken or invented contact. No
-  address is hardcoded anywhere in the component tree.
+  at build time and an invalid value fails the build. When it is unset,
+  `/partner` shows the invitation text and the link back to the technical
+  demo, and no contact button. No address is hardcoded anywhere in the
+  component tree.
 - `NEXT_PUBLIC_SITE_URL` — base for canonical and Open Graph URLs. Falls
   back to Vercel's `VERCEL_PROJECT_PRODUCTION_URL`, then
   `http://localhost:3000`. Set it only when deploying somewhere other than

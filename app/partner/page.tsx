@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { Arrangement } from "@/components/partner/arrangement";
-import { CollaborationSteps } from "@/components/partner/collaboration-steps";
 import { CurrentState } from "@/components/partner/current-state";
 import { Faq } from "@/components/partner/faq";
 import { FinalCta } from "@/components/partner/final-cta";
@@ -46,7 +45,6 @@ export default function PartnerPage() {
         <CurrentState />
         <Roles />
         <Arrangement />
-        <CollaborationSteps />
         <TechnicalProof />
         <Faq />
         <FinalCta />

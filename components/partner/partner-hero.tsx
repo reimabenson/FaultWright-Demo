@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import { Container } from "@/components/ui/container";
-import { ArrowDownIcon, ArrowUpRightIcon } from "@/components/ui/icons";
+import { ArrowUpRightIcon } from "@/components/ui/icons";
 import { Kicker } from "@/components/ui/kicker";
 import { Ledger, LedgerRow } from "@/components/ui/ledger";
 import { partnerHero } from "@/lib/partner";
@@ -26,13 +26,6 @@ export function PartnerHero() {
                 {partnerHero.primaryCta.label}
                 <ArrowUpRightIcon size={14} />
               </Link>
-              <a
-                href={partnerHero.secondaryCta.href}
-                className="inline-flex items-center gap-1.5 rounded-xs text-sm font-medium text-accent transition-colors hover:text-accent-strong"
-              >
-                {partnerHero.secondaryCta.label}
-                <ArrowDownIcon size={14} />
-              </a>
             </div>
           </div>
 

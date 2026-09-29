@@ -15,6 +15,7 @@ export const partnerHero = {
   supporting:
     "I can carry the technical execution. I am looking for a US-side collaborator who can carry the commercial conversations.",
   primaryCta: { label: "View technical demo", href: "/" },
+  secondaryCta: { label: "How collaboration could work", href: "#collaboration" },
   brief: [
     { label: "Stage", value: "Technical core built; commercialization beginning" },
     { label: "Looking for", value: "A US-side commercial collaborator" },
@@ -132,6 +133,57 @@ export const arrangement = {
     "This describes an independent collaboration between two people, not employment, and it is a starting point for discussion rather than a finished agreement.",
 } as const;
 
+export type StepOwner = "Collaborator" | "Founder" | "Together";
+
+export type CollaborationStep = {
+  title: string;
+  description: string;
+  owner: StepOwner;
+};
+
+export const collaboration: { kicker: string; title: string; lead: string; steps: CollaborationStep[] } = {
+  kicker: "How collaboration could work",
+  title: "One engagement at a time",
+  lead: "The sequence is deliberately simple. Each engagement is a complete loop, and each loop teaches us whether the work can repeat.",
+  steps: [
+    {
+      title: "Find a relevant paid opportunity",
+      description: "A team that needs to evaluate or train coding systems and would pay for verified repair tasks.",
+      owner: "Collaborator",
+    },
+    {
+      title: "Understand the customer's requirement",
+      description: "What they are evaluating or training, what a useful task looks like to them, and how they judge success.",
+      owner: "Together",
+    },
+    {
+      title: "Define the technical task and the commercial scope",
+      description: "Agree what will be built, what will be delivered, and on what terms.",
+      owner: "Together",
+    },
+    {
+      title: "Build and run the technical work",
+      description: "Task construction, environments, verification and evidence packaging.",
+      owner: "Founder",
+    },
+    {
+      title: "Coordinate with the customer",
+      description: "Communication, expectations, paperwork and the business relationship.",
+      owner: "Collaborator",
+    },
+    {
+      title: "Deliver and split collected project revenue",
+      description: "Under the agreed arrangement, after mutually agreed direct project expenses.",
+      owner: "Together",
+    },
+    {
+      title: "Decide whether it can repeat",
+      description: "Was the demand real, is it repeatable, and what would the next engagement look like?",
+      owner: "Together",
+    },
+  ],
+};
+
 export const technicalProof = {
   kicker: "Technical proof",
   title: "See what's actually built",
@@ -181,7 +233,7 @@ export const faq: { kicker: string; title: string; items: FaqItem[] } = {
     {
       question: "How much of the technical mechanism is public?",
       answer:
-        "The evaluation philosophy, the inputs and outputs, and the frozen Demo V0 artifacts are public on this site. The engine itself, meaning task construction, environments, verifiers and reference material, is private.",
+        "The evaluation philosophy, the inputs and outputs, and the frozen Demo V0 artifacts are public. The engine itself, meaning task construction, environments, verifiers and reference material, is private and is not in the demo repository.",
     },
   ],
 };
@@ -190,5 +242,6 @@ export const finalCta = {
   kicker: "Next step",
   title: "Interested in exploring it?",
   body: "If the direction sounds relevant to your background, the next step is simply a conversation. We can compare what each of us wants, discuss the commercial model, and decide whether there is a useful way to work together.",
+  fallbackNote: "The public repository is the current point of contact.",
   secondary: { label: "View technical demo", href: "/" },
 } as const;

@@ -7,7 +7,7 @@ import { finalCta } from "@/lib/partner";
 import { contact } from "@/lib/site";
 
 export function FinalCta() {
-  const isExternal = contact.configured && /^https?:/.test(contact.href);
+  const isExternal = /^https?:/.test(contact.href);
 
   return (
     <Section id="contact" labelledBy="contact-title">
@@ -20,16 +20,14 @@ export function FinalCta() {
           <p className="mt-5 max-w-prose text-lead text-muted">{finalCta.body}</p>
         </div>
         <div className="flex flex-col items-start gap-4 lg:col-span-5 lg:items-end lg:justify-center">
-          {contact.configured && (
-            <a
-              href={contact.href}
-              className="inline-flex items-center gap-2 rounded-sm bg-ink px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-accent-strong"
-              {...(isExternal ? { rel: "noopener noreferrer", target: "_blank" } : {})}
-            >
-              {contact.label}
-              <ArrowUpRightIcon size={14} />
-            </a>
-          )}
+          <a
+            href={contact.href}
+            className="inline-flex items-center gap-2 rounded-sm bg-ink px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-accent-strong"
+            {...(isExternal ? { rel: "noopener noreferrer", target: "_blank" } : {})}
+          >
+            {contact.label}
+            <ArrowUpRightIcon size={14} />
+          </a>
           <Link
             href={finalCta.secondary.href}
             className="inline-flex items-center gap-1.5 rounded-xs text-sm font-medium text-accent transition-colors hover:text-accent-strong"
@@ -37,6 +35,7 @@ export function FinalCta() {
             {finalCta.secondary.label}
             <ArrowUpRightIcon size={14} />
           </Link>
+          {!contact.configured && <p className="text-xs text-faint lg:text-right">{finalCta.fallbackNote}</p>}
         </div>
       </div>
     </Section>

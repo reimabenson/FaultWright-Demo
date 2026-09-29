@@ -10,6 +10,8 @@ function resolveSiteUrl(): URL {
   return new URL(`http://localhost:${process.env.PORT ?? "3000"}`);
 }
 
+const repoUrl = "https://github.com/reimabenson/FaultWright-Demo";
+
 export const site = {
   name: "FaultWright",
   descriptor: "Software repair evaluation",
@@ -17,6 +19,7 @@ export const site = {
   description:
     "FaultWright evaluates whether a software repair actually restores expected behavior. Demo V0 is a frozen evaluation record: one webhook-idempotency task, two deterministic pipeline controls, hashed public artifacts.",
   url: resolveSiteUrl(),
+  repoUrl,
 } as const;
 
 export const partnerPage = {
@@ -66,6 +69,7 @@ export const headers: Record<"demo" | "partner", HeaderConfig> = {
     descriptor: partnerPage.title,
     nav: [
       { href: "#what", label: "What it does" },
+      { href: "#collaboration", label: "Collaboration" },
       { href: "#proof", label: "Proof" },
       { href: "#faq", label: "FAQ" },
     ],
@@ -73,35 +77,41 @@ export const headers: Record<"demo" | "partner", HeaderConfig> = {
   },
 };
 
-export type FooterLink = { href: string; label: string };
+export type FooterLink = { href: string; label: string; external?: boolean };
 
 export const footers: Record<"demo" | "partner", FooterLink[]> = {
   demo: [
     { href: ARTIFACT_PATHS.demo, label: "Raw artifact" },
     { href: ARTIFACT_PATHS.freeze, label: "Freeze manifest" },
     { href: partnerPage.path, label: "Partner brief" },
+    { href: repoUrl, label: "GitHub", external: true },
   ],
   partner: [
     { href: "/", label: "Technical demo" },
     { href: ARTIFACT_PATHS.demo, label: "Raw artifact" },
+    { href: repoUrl, label: "GitHub", external: true },
   ],
 };
 
-export type Contact =
-  | { configured: true; href: string; label: "Start a conversation" }
-  | { configured: false };
+export type Contact = {
+  href: string;
+  label: string;
+  /** False when no destination is configured and the CTA falls back to the repository. */
+  configured: boolean;
+};
 
 /**
  * Destination of the "start a conversation" call to action on /partner.
  *
  * Set NEXT_PUBLIC_CONTACT_URL to a `mailto:` address, a scheduling link, or a
- * form URL. Until it is set, the page shows no contact link at all. No
- * address, and no source-repository link, is invented here.
+ * form URL. Until it is set, the CTA points at the public repository, which is
+ * the only contact surface this project currently publishes. No address is
+ * invented here.
  */
 function resolveContact(): Contact {
   const raw = process.env.NEXT_PUBLIC_CONTACT_URL?.trim();
   if (!raw) {
-    return { configured: false };
+    return { href: repoUrl, label: "Reach out via GitHub", configured: false };
   }
 
   let url: URL;
@@ -114,7 +124,7 @@ function resolveContact(): Contact {
     throw new Error(`NEXT_PUBLIC_CONTACT_URL must use https:, http:, or mailto:; got "${url.protocol}"`);
   }
 
-  return { configured: true, href: url.toString(), label: "Start a conversation" };
+  return { href: url.toString(), label: "Start a conversation", configured: true };
 }
 
 export const contact: Contact = resolveContact();

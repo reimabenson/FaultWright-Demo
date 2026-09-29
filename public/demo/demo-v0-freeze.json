@@ -3,7 +3,7 @@
   "correction": {
     "previous_demo_json_newline": "crlf",
     "previous_demo_json_sha256": "03d9fedaa8cc78ebe579088169707d8ab8a9cafc68c1668d0344c17db76fd1b0",
-    "reason": "Repository newline normalization. demo_json_sha256, demo_json_bytes, demo_json_newline and demo_json_path were recomputed over the canonical UTF-8, LF-terminated bytes committed to the repository. The evaluation record (demo-v0.json) was not re-run or edited; its content is as exported at artifact_created_at."
+    "reason": "Newline normalization. demo_json_sha256, demo_json_bytes, demo_json_newline and demo_json_path were recomputed over the canonical UTF-8, LF-terminated bytes of the published record. The evaluation record (demo-v0.json) was not re-run or edited; its content is as exported at artifact_created_at."
   },
   "demo_implementation_commit": "3f8229244954a3308f6d23ebf8c317aa779230f6",
   "demo_json_bytes": 3319,
@@ -16,7 +16,7 @@
   "kind": "demo-v0-freeze-manifest",
   "manifest_corrected_at": "2026-09-28T17:31:52.881439+00:00",
   "manifest_generated_at": "2026-09-28T12:11:59.185899+00:00",
-  "note": "Metadata about one exported demo run. Not an evaluation verdict. demo_json_sha256 is the SHA-256 of the canonical UTF-8, LF-terminated bytes of demo-v0.json as committed to the repository. artifact_created_at is when the evaluation record was exported; manifest_generated_at is when the engine generated this manifest; manifest_corrected_at is when the repository-side digest correction was applied.",
+  "note": "Metadata about one exported demo run. Not an evaluation verdict. demo_json_sha256 is the SHA-256 of the canonical UTF-8, LF-terminated bytes of the published demo-v0.json. artifact_created_at is when the evaluation record was exported; manifest_generated_at is when the engine generated this manifest; manifest_corrected_at is when the digest correction was applied.",
   "run_id": "879c077fcda2ee530deb9d7f7ad290a3",
   "scenario_id": "coding-ai-evaluation-webhook",
   "solvers": [

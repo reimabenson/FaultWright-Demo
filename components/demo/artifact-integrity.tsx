@@ -36,8 +36,8 @@ function ArtifactFileCard({ file, title, description, badge, children }: Artifac
       </div>
 
       <Ledger className="border-t border-line px-5 sm:px-6">
-        <LedgerRow label="Repository path">
-          <Identifier value={file.repoPath} label="repository path" variant="plain" copy={false} />
+        <LedgerRow label="Published at">
+          <Identifier value={file.publicPath} label="published path" variant="plain" copy={false} />
         </LedgerRow>
         <LedgerRow label="Size">
           {formatBytes(file.bytes)} <span className="text-faint">· {file.newline.toUpperCase()} newlines</span>
@@ -78,8 +78,8 @@ type ProvenanceEvent = {
 
 /**
  * Separates the export time of the evaluation record from the times the
- * manifest was generated and later corrected, so a repository-side
- * correction cannot read as a re-run of the evaluation.
+ * manifest was generated and later corrected, so a digest correction
+ * cannot read as a re-run of the evaluation.
  */
 function ProvenanceTimeline() {
   const events: ProvenanceEvent[] = [
@@ -117,7 +117,7 @@ function ProvenanceTimeline() {
 
   if (freeze.manifest_corrected_at && freeze.correction) {
     events.push({
-      title: "Manifest digest corrected in the repository",
+      title: "Manifest digest corrected",
       at: freeze.manifest_corrected_at,
       field: "manifest_corrected_at",
       detail: (
@@ -144,8 +144,8 @@ function ProvenanceTimeline() {
           </h3>
           <p className="mt-3 text-sm leading-relaxed text-muted">
             Three timestamps are kept apart on purpose: when the record was exported, when the engine
-            generated the manifest, and when the repository corrected the manifest&rsquo;s digest after
-            newline normalization. The outcomes, identifiers and evidence date from the first.
+            generated the manifest, and when the published digest was corrected after newline
+            normalization. The outcomes, identifiers and evidence date from the first.
           </p>
           {freeze.correction && (
             <p className="mt-3 text-xs leading-5 text-muted">

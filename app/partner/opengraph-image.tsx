@@ -13,11 +13,11 @@ export default function OpenGraphImage() {
     title: partnerHero.headline,
     titleSize: 58,
     footerLeft: [
-      <OgChip key="core" tone="accent" label="Technical core built" />,
-      <OgChip key="demo" tone="accent" label="Public Demo V0 available" />,
+      <OgChip key="core" tone="success" label="Verification core demonstrated" />,
+      <OgChip key="build" tone="accent" label="Execution system in development" />,
     ],
     footerRight: [
-      "Commercialization beginning",
+      "Workload sources · rules · feedback",
       "Seeking a US-side commercial collaborator",
       "No coding required",
     ],

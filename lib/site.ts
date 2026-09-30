@@ -12,10 +12,10 @@ function resolveSiteUrl(): URL {
 
 export const site = {
   name: "FaultWright",
-  descriptor: "Software repair evaluation",
-  title: "FaultWright — Verifiable software repair evaluation",
+  descriptor: "Verification-first task factory",
+  title: "FaultWright — Verification-first AI-training task factory",
   description:
-    "FaultWright evaluates whether a software repair actually restores expected behavior. Demo V0 is a frozen evaluation record: one webhook-idempotency task, two deterministic pipeline controls, hashed public artifacts.",
+    "FaultWright is being built to autonomously execute permitted software-engineering AI-training tasks, independently verify the result, and produce auditable evidence.",
   url: resolveSiteUrl(),
 } as const;
 
@@ -23,7 +23,7 @@ export const partnerPage = {
   path: "/partner",
   title: "Partner brief",
   description:
-    "FaultWright builds reproducible software-repair tasks for AI evaluation. The technical core is built and publicly demonstrated; the current focus is commercialization with a US-side collaborator. No coding required.",
+    "A partner brief for building FaultWright: a reusable, verification-first system for permitted software-engineering AI-training workloads.",
 } as const;
 
 export type NavItem = {
@@ -53,11 +53,11 @@ export const headers: Record<"demo" | "partner", HeaderConfig> = {
     home: "#top",
     descriptor: site.descriptor,
     nav: [
-      { href: "#method", label: "Method", primaryOnMobile: true },
-      { href: "#challenge", label: "Challenge" },
-      { href: "#controls", label: "Controls" },
+      { href: "#system", label: "Direction", primaryOnMobile: true },
+      { href: "#proving-ground", label: "Proving ground" },
+      { href: "#capabilities", label: "System asset" },
+      { href: "#demo-v0", label: "Demo V0", primaryOnMobile: true },
       { href: "#evidence", label: "Evidence", primaryOnMobile: true },
-      { href: "#artifacts", label: "Artifacts", primaryOnMobile: true },
     ],
     crossLink: { href: partnerPage.path, label: "Partner brief", prominent: false },
   },
@@ -65,7 +65,8 @@ export const headers: Record<"demo" | "partner", HeaderConfig> = {
     home: "/",
     descriptor: partnerPage.title,
     nav: [
-      { href: "#what", label: "What it does" },
+      { href: "#what", label: "Direction" },
+      { href: "#roles", label: "Role" },
       { href: "#proof", label: "Proof" },
       { href: "#faq", label: "FAQ" },
     ],

@@ -17,11 +17,11 @@ export function RecordCard({ className }: { className?: string }) {
     >
       <div className="flex items-center justify-between gap-4 border-b border-line px-5 py-3.5">
         <h2 id="record-title" className="text-sm font-semibold text-ink">
-          Evaluation record
+          Demo V0 · Verification Core
         </h2>
         <StatusBadge tone="neutral" icon={false}>
           <span aria-hidden="true" className="size-1.5 rounded-full bg-success" />
-          Complete · Frozen
+          Frozen record
         </StatusBadge>
       </div>
 

@@ -7,6 +7,7 @@ import { CurrentState } from "@/components/partner/current-state";
 import { Faq } from "@/components/partner/faq";
 import { FinalCta } from "@/components/partner/final-cta";
 import { PartnerHero } from "@/components/partner/partner-hero";
+import { ProductModel } from "@/components/partner/product-model";
 import { Roles } from "@/components/partner/roles";
 import { TechnicalProof } from "@/components/partner/technical-proof";
 import { WhatItDoes } from "@/components/partner/what-it-does";
@@ -42,6 +43,7 @@ export default function PartnerPage() {
       <main id="content">
         <PartnerHero />
         <WhatItDoes />
+        <ProductModel />
         <CurrentState />
         <Roles />
         <Arrangement />

@@ -4,7 +4,8 @@ import { Section } from "@/components/ui/section";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { demo } from "@/lib/demo";
 import { formatIndex, humanizeIdentifier } from "@/lib/format";
-import { deliverableDescriptions, notClaimed, roadmap } from "@/lib/presentation";
+import { currentTruth } from "@/lib/product";
+import { deliverableDescriptions, notClaimed } from "@/lib/presentation";
 
 export function Scope() {
   const deliverables = demo.scenario.expected_deliverables;
@@ -52,15 +53,17 @@ export function Scope() {
         </div>
       </div>
 
-      <ol className="mt-12 grid gap-8 border-t border-line pt-8 sm:grid-cols-3 sm:gap-6">
-        {roadmap.map((item) => (
-          <li key={item.stage}>
-            <Kicker className={item.stage === "Now" ? "text-accent" : undefined}>{item.stage}</Kicker>
-            <h3 className="mt-3 text-base font-semibold text-ink">{item.title}</h3>
-            <p className="mt-1.5 text-sm leading-relaxed text-muted">{item.description}</p>
-          </li>
-        ))}
-      </ol>
+      <div className="mt-12 border-t border-line pt-8">
+        <Kicker>Honest current state</Kicker>
+        <ul className="mt-5 grid gap-x-10 gap-y-4 sm:grid-cols-2">
+          {currentTruth.map((item) => (
+            <li key={item} className="flex gap-3 text-sm leading-relaxed text-ink-2">
+              <span aria-hidden="true" className="mt-2 size-1.5 shrink-0 rounded-full bg-accent" />
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
     </Section>
   );
 }

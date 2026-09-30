@@ -28,10 +28,10 @@ export function EvaluationFlow() {
     <Section id="method" labelledBy="method-title">
       <SectionHeading
         index="01"
-        kicker="Method"
-        title="How FaultWright evaluates a repair"
+        kicker="Verification core method"
+        title="How Demo V0 evaluates a repair"
         titleId="method-title"
-        lead="Six steps, all bound to one frozen task identity. The output is a verified behavioral outcome, not an opinion about the diff."
+        lead="Six steps, all bound to one frozen task identity. This is the verification layer of the broader system, and its output is a behavioral outcome rather than an opinion about the diff."
       />
 
       <ol className="mt-12 grid gap-y-9 border-t border-line pt-8 sm:grid-cols-2 sm:gap-x-8 lg:grid-cols-3 xl:grid-cols-6 xl:gap-x-6">

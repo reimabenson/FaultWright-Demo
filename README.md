@@ -1,12 +1,14 @@
 # FaultWright Demo
 
-A standalone public presentation of FaultFoundry Demo V0: one frozen
-software task, two deterministic reference controls, and the canonical
-outcomes produced by the FaultFoundry evaluation engine.
+A public presentation of FaultWright's near-term product direction: a
+verification-first system for permitted software-engineering AI-training
+tasks, plus Demo V0, one frozen record that proves the verification core
+under a controlled software-repair task.
 
-The site is presentation-only. It does not execute tasks, call model
-providers, or calculate verification results. Every identity and outcome
-on the page is read from `public/demo/demo-v0.json`.
+The site is presentation-only. It does not execute external tasks, call
+model providers, or calculate verification results in the browser. Product
+direction copy is editorial. Every Demo V0 identity and outcome is read
+from `public/demo/demo-v0.json`.
 
 ## Local development
 
@@ -27,8 +29,9 @@ npm audit
 
 ## Routes
 
-- `/` — the technical demo: a rigorous presentation of the frozen
-  evaluation record with a full evidence ledger and artifact integrity.
+- `/` — the product direction, high-level system flow, paid proving-ground
+  rationale, capability loop, near-term roadmap, and the full frozen Demo V0
+  evidence record.
 - `/partner` — a brief for a prospective commercial collaborator. Same
   visual system, warmer and less dense. Its copy lives in
   `lib/partner.ts` and never touches the evaluation artifact.
@@ -47,6 +50,8 @@ Both routes are prerendered as static content.
   from the artifact (what each control is for, the result a working
   pipeline must produce for it, plain-English framing of the task). Keyed
   by the artifact's own identifiers so a swapped artifact fails loudly.
+- `lib/product.ts` — editorial product-direction content, kept separate
+  from the frozen evaluation record.
 - `lib/partner.ts` — editorial content for `/partner`.
 - `lib/site.ts` — site identity, per-page header/footer navigation, and
   the configurable contact destination.
@@ -60,8 +65,11 @@ Both routes are prerendered as static content.
 - `components/layout/` — the site header and footer, shared by both routes
   and configured per page through a `variant` prop.
 - `components/demo/` — the demo sections, in reading order: hero and
-  record card, evaluation flow, frozen challenge, control comparison and
-  consistency check, evidence ledger, artifact integrity, scope.
+  record card, verification-core transition, evaluation flow, frozen
+  challenge, control comparison and consistency check, evidence ledger,
+  artifact integrity, scope.
+- `components/product/` — system flow, proving-ground rationale,
+  accumulating capabilities, product distinction, and near-term roadmap.
 - `components/partner/` — the partner-brief sections.
 - `app/globals.css` — Tailwind v4 with the default palette disabled and a
   small named token set (`bg`, `surface`, `ink`, `muted`, `line`, `accent`,

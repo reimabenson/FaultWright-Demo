@@ -128,31 +128,9 @@ export const deliverableDescriptions: Record<string, string> = {
 };
 
 export const notClaimed: string[] = [
+  "This record does not prove autonomous intake, planning, or execution of an external platform task.",
+  "It does not imply that every platform or software-engineering task family is supported.",
   "No AI model or coding agent was evaluated in this record. Both attempts are deterministic controls.",
   "The controls are not competing systems. They exist to check the evaluator, not to rank solvers.",
   "No success rates, benchmark scores, customers, or production usage are asserted.",
-];
-
-export type RoadmapItem = {
-  stage: "Now" | "Next" | "Later";
-  title: string;
-  description: string;
-};
-
-export const roadmap: RoadmapItem[] = [
-  {
-    stage: "Now",
-    title: "Reference-controlled evaluation",
-    description: "This record: deterministic controls under one frozen task and environment.",
-  },
-  {
-    stage: "Next",
-    title: "Named coding agents",
-    description: "Evaluate real repair systems under the same frozen conditions.",
-  },
-  {
-    stage: "Later",
-    title: "Regression workflows",
-    description: "Compare changes against stable task identities over time.",
-  },
 ];
